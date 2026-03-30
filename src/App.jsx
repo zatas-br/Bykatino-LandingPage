@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Freedom from './components/Freedom';
+import Feedback from './components/Feedback';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Hero />
         <Features />
         <Freedom />
+      <Feedback />
       </main>
     </div>
   );

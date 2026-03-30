@@ -12,7 +12,7 @@ const Hero = () => {
         <img
           src="/logo-fundo-secao.png"
           alt=""
-          className="absolute top-1/2 left-[60%] w-[1000px] -translate-x-1/2 -translate-y-1/2 object-contain z-0 rotate-[15deg] opacity-60 mix-blend-multiply"
+          className="absolute top-1/2 left-[80%] w-[1000px] -translate-x-1/2 -translate-y-[45%] object-contain z-0 rotate-[15deg] opacity-60 mix-blend-multiply"
         />
       </div>
 
@@ -32,30 +32,44 @@ const Hero = () => {
 
           <div className="pt-12 z-20 relative">
             <button
-              className="group relative inline-flex items-center text-primary font-bold py-3 transition-all duration-300 gap-4"
+              className="group relative inline-flex items-center font-bold py-3 pl-4 pr-16 transition-all duration-300 overflow-hidden rounded-full"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
+              style={{ backgroundColor: 'transparent' }}
             >
-              <div className="relative flex items-center justify-center w-12 h-12">
-                {/* Expandable background */}
-                <div
-                  className="absolute left-0 top-0 h-full bg-white/40 rounded-full transition-all duration-500 ease-out z-0"
-                  style={{ width: isHovered ? '200px' : '48px' }}
-                />
+              {/* Expandable background starting from left */}
+              <div
+                className="absolute left-0 top-0 h-full bg-white/40 transition-all duration-500 ease-out z-0"
+                style={{
+                  width: isHovered ? '100%' : '48px',
+                  borderRadius: '9999px'
+                }}
+              />
 
-                {/* Arrow Icon */}
-                <div className="absolute left-0 top-0 bg-transparent border border-primary/50 w-12 h-12 rounded-full flex items-center justify-center z-10">
-                   <ArrowRight
-                     size={20}
-                     className="text-primary transition-transform duration-500"
-                     style={{ transform: isHovered ? 'translateX(5px)' : 'translateX(0)' }}
-                   />
-                </div>
-              </div>
-
-              <span className="relative z-10 text-sm tracking-wider uppercase ml-2 transition-colors duration-300" style={{ color: isHovered ? '#1E1E1E' : '#3C000E' }}>
+              <span className="relative z-10 text-sm tracking-wider uppercase ml-12 transition-colors duration-300" style={{ color: isHovered ? '#1E1E1E' : '#3C000E' }}>
                 VER COLEÇÃO
               </span>
+
+              {/* Arrow Icon sliding from left */}
+              <div
+                className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center z-10 transition-all duration-500 ease-in-out"
+                style={{
+                  left: isHovered ? 'calc(100% - 40px)' : '16px',
+                  width: '48px',
+                  height: '48px'
+                }}
+              >
+                {/* Initial outline circle that stays on left */}
+                <div
+                  className="absolute inset-0 rounded-full border border-primary/50 transition-opacity duration-300"
+                  style={{ opacity: isHovered ? 0 : 1 }}
+                />
+
+                 <ArrowRight
+                   size={20}
+                   className="text-primary"
+                 />
+              </div>
             </button>
           </div>
         </div>
