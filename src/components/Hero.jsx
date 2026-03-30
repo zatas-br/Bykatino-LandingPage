@@ -5,18 +5,21 @@ const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section className="relative w-full max-w-7xl mx-auto mt-6 rounded-3xl overflow-hidden bg-secondary min-h-[600px] flex items-center px-12 z-10">
-      {/* Background Graphic */}
-      <img
-        src="/logo-fundo-secao.png"
-        alt=""
-        className="absolute top-1/2 left-[60%] w-[900px] -translate-x-1/2 -translate-y-1/2 object-contain pointer-events-none z-0 rotate-[15deg] opacity-60 mix-blend-multiply"
-      />
+    <section className="relative w-full max-w-7xl mx-auto mt-16 rounded-3xl min-h-[650px] flex items-center px-12 z-10">
+      {/* Background Wrapper */}
+      <div className="absolute inset-0 rounded-3xl overflow-hidden bg-secondary pointer-events-none">
+        {/* Background Graphic */}
+        <img
+          src="/logo-fundo-secao.png"
+          alt=""
+          className="absolute top-1/2 left-[60%] w-[1000px] -translate-x-1/2 -translate-y-1/2 object-contain z-0 rotate-[15deg] opacity-60 mix-blend-multiply"
+        />
+      </div>
 
       <div className="relative z-10 flex w-full justify-between items-center h-full pt-12">
         {/* Left Content */}
         <div className="max-w-[700px] flex flex-col justify-center space-y-6">
-          <h1 className="text-primary text-5xl lg:text-7xl font-bold leading-[1.1] z-10 relative drop-shadow-sm">
+          <h1 className="text-primary text-4xl lg:text-5xl font-bold leading-[1.1] z-10 relative drop-shadow-sm">
             Sua melhor versão<br/>começa com o look ideal.
           </h1>
 
@@ -58,11 +61,11 @@ const Hero = () => {
         </div>
 
         {/* Right Image */}
-        <div className="absolute right-0 bottom-0 h-[105%] w-[60%] flex items-end justify-end pointer-events-none z-20">
+        <div className="absolute right-0 bottom-0 h-[115%] w-[60%] flex items-end justify-end pointer-events-none z-20">
           <img
             src="/mulher-melhor-versao.png"
             alt="Mulher com roupa fitness ByKatino"
-            className="object-contain h-full w-auto object-right-bottom transform translate-y-4 translate-x-12"
+            className="object-contain h-full w-auto object-right-bottom transform translate-y-0 translate-x-8"
           />
         </div>
       </div>
