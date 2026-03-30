@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Freedom from './components/Freedom';
 import Feedback from './components/Feedback';
+import Sets from './components/Sets'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Features />
         <Freedom />
         <Feedback />
+        <Sets />
       </main>
     </div>
   );
