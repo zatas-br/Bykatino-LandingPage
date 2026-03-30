@@ -9,11 +9,11 @@ function App() {
   return (
     <div className="min-h-screen bg-primary font-montserrat overflow-x-hidden">
       <Header />
-      <main className="pb-20 space-y-12">
+      <main className="space-y-12">
         <Hero />
         <Features />
         <Freedom />
-      <Feedback />
+        <Feedback />
       </main>
     </div>
   );

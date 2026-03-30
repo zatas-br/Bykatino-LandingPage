@@ -1,23 +1,27 @@
 const { chromium } = require('playwright');
 
 (async () => {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
-  await page.goto('http://localhost:5173');
 
-  // Verify Hero section background and button hover
-  await page.waitForTimeout(1000);
-  await page.screenshot({ path: 'hero-updated.png' });
+  try {
+    // Navigate to the local server
+    await page.goto('http://localhost:5173');
 
-  // Hover over the button in Hero
-  const button = await page.locator('text=VER COLEÇÃO').first();
-  await button.hover();
-  await page.waitForTimeout(500); // wait for animation
-  await page.screenshot({ path: 'hero-hover-updated.png' });
+    // Wait for the feedback section to be visible
+    const feedbackSection = page.locator('section').filter({ hasText: 'Veja o feedback dos nossos clientes' });
+    await feedbackSection.scrollIntoViewIfNeeded();
 
-  // Verify Feedback section
-  const feedbackSection = await page.locator('text=Veja o feedback dos nossos clientes').locator('..').locator('..');
-  await feedbackSection.screenshot({ path: 'feedback-section.png' });
+    // Wait for the layout to settle
+    await page.waitForTimeout(1000);
 
-  await browser.close();
+    // Take a screenshot of the feedback section
+    await feedbackSection.screenshot({ path: '/app/feedback-carousel-rounded.png' });
+    console.log("Screenshot captured: /app/feedback-carousel-rounded.png");
+
+  } catch (error) {
+    console.error("Error during verification:", error);
+  } finally {
+    await browser.close();
+  }
 })();
