@@ -21,9 +21,9 @@ const Feedback = () => {
   const extendedFeedbacks = [...feedback.items, ...feedback.items];
 
   return (
-    <section className="w-full bg-secondary pt-24 pb-32 rounded-b-[40px] md:rounded-b-[80px] relative z-10 mb-20 shadow-md overflow-hidden">
+    <section className="w-full bg-secondary pt-20 md:pt-24 pb-20 md:pb-32 rounded-b-[40px] md:rounded-b-[80px] relative z-10 mb-10 md:mb-20 shadow-md overflow-hidden mt-8 md:mt-0">
       <div className="w-full flex flex-col items-center">
-        <h2 className="text-tertiary text-4xl md:text-[2.75rem] font-bold mb-16 text-center tracking-tight px-6">
+        <h2 className="text-tertiary text-3xl md:text-[2.75rem] font-bold mb-10 md:mb-16 text-center tracking-tight px-6">
           {feedback.heading}
         </h2>
 

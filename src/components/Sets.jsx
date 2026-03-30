@@ -6,20 +6,20 @@ const Sets = () => {
   const { sets } = content;
 
   return (
-    <section className="w-full bg-primary pt-16 pb-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
+    <section className="w-full bg-primary pt-16 pb-16 md:pb-32">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 flex flex-col lg:flex-row gap-12 lg:gap-24 items-center lg:items-start text-center md:text-left">
 
         {/* Left Column: Text & Small Images */}
-        <div className="flex-1 flex flex-col">
-          <div className="max-w-xl">
-            <h2 className="text-secondary text-4xl md:text-[2.75rem] font-bold mb-6 tracking-tight leading-tight">
+        <div className="flex-1 flex flex-col items-center md:items-start w-full">
+          <div className="max-w-xl flex flex-col items-center md:items-start">
+            <h2 className="text-secondary text-3xl md:text-[2.75rem] font-bold mb-6 tracking-tight leading-tight">
               {sets.heading}
             </h2>
-            <p className="text-white/90 text-[1.1rem] leading-snug mb-10 font-medium whitespace-pre-line">
+            <p className="text-white/90 text-base md:text-[1.1rem] leading-snug mb-10 font-medium whitespace-pre-line">
               {sets.description}
             </p>
 
-            <button className="bg-secondary text-primary font-bold py-3 px-8 rounded-full btn-hover-effect inline-flex items-center gap-3 transition-all shadow-md">
+            <button className="bg-secondary text-primary font-bold py-3 px-8 rounded-full btn-hover-effect inline-flex items-center gap-3 transition-all shadow-md mx-auto md:mx-0">
               <span className="btn-hover-content flex items-center gap-3 text-sm">
                 <ArrowRight size={18} />
                 {sets.ctaButton}
@@ -28,15 +28,15 @@ const Sets = () => {
           </div>
 
           {/* Small Images Row */}
-          <div className="flex gap-6 mt-16 lg:mt-32 max-w-lg">
-            <div className="flex-1 rounded-[24px] overflow-hidden aspect-[4/3] bg-white">
+          <div className="flex gap-4 md:gap-6 mt-12 md:mt-16 lg:mt-32 w-full max-w-lg mx-auto md:mx-0">
+            <div className="flex-1 rounded-[16px] md:rounded-[24px] overflow-hidden aspect-[4/3] bg-white">
               <img
                 src={sets.imageSmall1Src}
                 alt={sets.imageSmall1Alt}
                 className="w-full h-full object-cover object-top"
               />
             </div>
-            <div className="flex-1 rounded-[24px] overflow-hidden aspect-[4/3] bg-[#0E3572]">
+            <div className="flex-1 rounded-[16px] md:rounded-[24px] overflow-hidden aspect-[4/3] bg-[#0E3572]">
               <img
                 src={sets.imageSmall2Src}
                 alt={sets.imageSmall2Alt}
@@ -47,8 +47,8 @@ const Sets = () => {
         </div>
 
         {/* Right Column: Large Image */}
-        <div className="w-full lg:w-[400px] xl:w-[420px] shrink-0 self-stretch flex items-stretch">
-          <div className="w-full rounded-[32px] overflow-hidden bg-[#f5e8d0] aspect-[3/4] lg:aspect-auto h-full">
+        <div className="w-full lg:w-[400px] xl:w-[420px] shrink-0 self-stretch flex items-stretch mt-8 md:mt-0">
+          <div className="w-full rounded-[24px] md:rounded-[32px] overflow-hidden bg-[#f5e8d0] aspect-[3/4] lg:aspect-auto h-full">
             <img
               src={sets.imageLargeSrc}
               alt={sets.imageLargeAlt}

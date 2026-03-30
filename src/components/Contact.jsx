@@ -48,18 +48,18 @@ const Contact = () => {
   const { contact } = content;
 
   return (
-    <section id="contato" className="w-full bg-primary pt-16 pb-24 relative z-0 flex flex-col items-center">
-      <h2 className="text-white text-3xl md:text-4xl font-bold mb-8 text-center tracking-tight">
+    <section id="contato" className="w-full bg-primary pt-16 relative z-0 flex flex-col items-center">
+      <h2 className="text-white text-3xl md:text-4xl font-bold mb-8 px-4 text-center tracking-tight">
         {contact.heading}
       </h2>
 
-      <div className="w-full max-w-6xl bg-[#e6ce9e] rounded-[60px] md:rounded-[80px] flex flex-col md:flex-row items-start justify-between overflow-hidden relative min-h-[500px]">
+      <div className="w-full max-w-6xl bg-[#e6ce9e] rounded-t-[40px] md:rounded-t-[80px] flex flex-col md:flex-row items-start justify-between overflow-hidden relative min-h-[500px]">
 
         {/* Left Side: Links and Logo */}
-        <div className="flex-1 flex flex-col w-full z-10 self-start px-8 md:pl-20 py-16 md:py-20">
+        <div className="flex-1 flex flex-col w-full z-10 self-start px-6 md:pl-20 py-12 md:py-20">
           {/* Decorative Logo / Brand Text */}
-          <div className="mb-12 md:mb-16 -ml-4">
-            <h3 className="text-primary text-[4rem] md:text-[5rem] lg:text-[6rem] font-bold tracking-[-0.08em] leading-none uppercase select-none" style={{ fontFamily: 'Georgia, serif' }}>
+          <div className="mb-10 md:mb-16 -ml-2 md:-ml-4 text-center md:text-left">
+            <h3 className="text-primary text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] font-bold tracking-[-0.08em] leading-none uppercase select-none" style={{ fontFamily: 'Georgia, serif' }}>
                {contact.logoText}
             </h3>
           </div>
@@ -103,21 +103,21 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right Side: Image */}
+        {/* Right Side: Image Desktop */}
         <div className="flex-1 w-full md:w-auto h-full absolute right-0 bottom-0 pointer-events-none z-10 hidden md:block">
           <img
             src={contact.imageSrc}
             alt={contact.imageAlt}
-            className="object-contain object-right-bottom h-[115%] absolute right-0 bottom-0"
+            className="object-contain object-right-bottom h-[110%] lg:h-[115%] absolute right-0 bottom-0"
           />
         </div>
 
         {/* Mobile Image */}
-        <div className="w-full flex justify-center mt-12 block md:hidden z-10 relative">
+        <div className="w-full flex justify-center mt-8 md:hidden z-10 relative px-4">
            <img
             src={contact.imageSrc}
             alt={contact.imageAlt}
-            className="object-contain max-h-[400px]"
+            className="object-contain max-h-[350px] w-full"
           />
         </div>
 
