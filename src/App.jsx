@@ -5,6 +5,7 @@ import Features from './components/Features';
 import Freedom from './components/Freedom';
 import Feedback from './components/Feedback';
 import Sets from './components/Sets'
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Freedom />
         <Feedback />
         <Sets />
+        <Contact />
       </main>
     </div>
   );

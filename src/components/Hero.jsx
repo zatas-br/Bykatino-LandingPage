@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { content } from '../data.js';
 
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const { hero } = content;
 
   return (
     <section className="relative w-full max-w-7xl mx-auto mt-16 rounded-3xl min-h-[650px] flex items-center px-12 z-10">
@@ -10,8 +12,8 @@ const Hero = () => {
       <div className="absolute inset-0 rounded-3xl overflow-hidden bg-secondary pointer-events-none">
         {/* Background Graphic */}
         <img
-          src="/logo-fundo-secao.png"
-          alt=""
+          src={hero.backgroundImageSrc}
+          alt={hero.backgroundImageAlt}
           className="absolute top-1/2 left-[80%] w-[1000px] -translate-x-1/2 -translate-y-[45%] object-contain z-0 rotate-[15deg] opacity-60 mix-blend-multiply"
         />
       </div>
@@ -19,15 +21,12 @@ const Hero = () => {
       <div className="relative z-10 flex w-full justify-between items-center h-full pt-12">
         {/* Left Content */}
         <div className="max-w-[700px] flex flex-col justify-center space-y-6">
-          <h1 className="text-primary text-4xl lg:text-5xl font-bold leading-[1.1] z-10 relative drop-shadow-sm">
-            Sua melhor versão<br/>começa com o look ideal.
+          <h1 className="text-primary text-4xl lg:text-5xl font-bold leading-[1.1] z-10 relative drop-shadow-sm whitespace-pre-line">
+            {hero.heading}
           </h1>
 
-          <p className="text-[#7B1F34] text-lg font-semibold max-w-[550px] leading-relaxed z-10 relative">
-            Descubra a fusão perfeita entre conforto de alta<br/>
-            performance e design sofisticado. A ByKatino traz a moda<br/>
-            fitness que valoriza suas curvas e potencializa seus treinos,<br/>
-            direto do coração do Piauí para você.
+          <p className="text-[#7B1F34] text-lg font-semibold max-w-[550px] leading-relaxed z-10 relative whitespace-pre-line">
+            {hero.description}
           </p>
 
           <div className="pt-12 z-20 relative">
@@ -47,7 +46,7 @@ const Hero = () => {
               />
 
               <span className="relative z-10 text-sm tracking-wider uppercase ml-12 transition-colors duration-300" style={{ color: isHovered ? '#1E1E1E' : '#3C000E' }}>
-                VER COLEÇÃO
+                {hero.ctaButton}
               </span>
 
               {/* Arrow Icon sliding from left */}
@@ -77,8 +76,8 @@ const Hero = () => {
         {/* Right Image */}
         <div className="absolute right-0 bottom-0 h-[115%] w-[60%] flex items-end justify-end pointer-events-none z-20">
           <img
-            src="/mulher-melhor-versao.png"
-            alt="Mulher com roupa fitness ByKatino"
+            src={hero.imageSrc}
+            alt={hero.imageAlt}
             className="object-contain h-full w-auto object-right-bottom transform translate-y-0 translate-x-8"
           />
         </div>

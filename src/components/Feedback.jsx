@@ -1,4 +1,5 @@
 import React from 'react';
+import { content } from '../data.js';
 
 const FeedbackCard = ({ text, name }) => {
   return (
@@ -14,41 +15,16 @@ const FeedbackCard = ({ text, name }) => {
 };
 
 const Feedback = () => {
-  const feedbacks = [
-    {
-      text: "Amei por conta dos tecidos fenomenais do pau brasil que tem sempre aqui no piaui, recomendo.",
-      name: "Edineuza Natal"
-    },
-    {
-      text: "As peças são maravilhosas, confortáveis e vestem perfeitamente. O treino rende muito mais com estilo e conforto!",
-      name: "Mariana Silva"
-    },
-    {
-      text: "A qualidade superou minhas expectativas. Zero transparência e muita sustentação. Indico de olhos fechados.",
-      name: "Carla Ferreira"
-    },
-    {
-      text: "As cores e os recortes das roupas valorizam muito o corpo. Melhor marca de moda fitness que já usei.",
-      name: "Juliana Santos"
-    },
-    {
-      text: "Atendimento impecável e os looks chegam super rápido e com um cheirinho delicioso. Sou cliente fiel!",
-      name: "Fernanda Costa"
-    },
-    {
-      text: "Amei por conta dos tecidos fenomenais que não limitam os movimentos.",
-      name: "Larissa Oliveira"
-    }
-  ];
+  const { feedback } = content;
 
   // We double the feedbacks to ensure it covers very wide screens (like 4K)
-  const extendedFeedbacks = [...feedbacks, ...feedbacks];
+  const extendedFeedbacks = [...feedback.items, ...feedback.items];
 
   return (
     <section className="w-full bg-secondary pt-24 pb-32 rounded-b-[40px] md:rounded-b-[80px] relative z-10 mb-20 shadow-md overflow-hidden">
       <div className="w-full flex flex-col items-center">
         <h2 className="text-tertiary text-4xl md:text-[2.75rem] font-bold mb-16 text-center tracking-tight px-6">
-          Veja o feedback dos nossos clientes
+          {feedback.heading}
         </h2>
 
         {/* Infinite scrolling container */}
