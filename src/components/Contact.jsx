@@ -104,20 +104,20 @@ const Contact = () => {
         </div>
 
         {/* Right Side: Image Desktop */}
-        <div className="flex-1 w-full md:w-auto h-full absolute right-0 bottom-0 pointer-events-none z-10 hidden md:block">
+        <div className="flex-1 w-full md:w-auto h-full absolute right-0 bottom-0 pointer-events-none z-10 hidden md:flex items-end justify-end overflow-visible">
           <img
             src={contact.imageSrc}
             alt={contact.imageAlt}
-            className="object-contain object-right-bottom h-[110%] lg:h-[115%] absolute right-0 bottom-0"
+            className="object-contain object-right-bottom h-[105%] lg:h-[115%] absolute right-0 bottom-0 max-w-[60%] lg:max-w-none"
           />
         </div>
 
         {/* Mobile Image */}
-        <div className="w-full flex justify-center mt-8 md:hidden z-10 relative px-4">
+        <div className="w-full flex justify-center mt-8 md:hidden z-10 relative">
            <img
             src={contact.imageSrc}
             alt={contact.imageAlt}
-            className="object-contain max-h-[350px] w-full"
+            className="object-contain h-[350px] w-auto bottom-0"
           />
         </div>
 

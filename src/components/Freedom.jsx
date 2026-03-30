@@ -8,20 +8,20 @@ const Freedom = () => {
 
   return (
     <div className="px-4 w-full md:px-0">
-      <section className="relative w-full max-w-7xl mx-auto mt-6 bg-secondary h-auto md:h-[550px] flex flex-col md:flex-row items-center rounded-tl-[60px] md:rounded-tl-[120px] rounded-br-[60px] md:rounded-br-[120px] overflow-visible pb-12 md:pb-0">
+      <section className="relative w-full max-w-7xl mx-auto mt-6 bg-secondary h-auto md:h-[550px] flex flex-col md:flex-row items-center rounded-tl-[60px] md:rounded-tl-[120px] rounded-br-[60px] md:rounded-br-[120px] overflow-visible pt-10 md:pt-0 pb-0 md:pb-0">
 
-        <div className="flex flex-col-reverse md:flex-row w-full h-full">
+        <div className="flex flex-col-reverse md:flex-row w-full h-full justify-end md:justify-start">
           {/* Left Side: Image */}
-          <div className="w-full md:w-1/2 relative flex items-end justify-center h-[300px] md:h-full mt-8 md:mt-0">
+          <div className="w-full md:w-1/2 relative flex items-end justify-center h-[350px] md:h-full mt-auto md:mt-0">
               <img
                 src={freedom.imageSrc}
                 alt={freedom.imageAlt}
-                className="object-contain h-[350px] md:h-[110%] w-auto absolute bottom-0 md:left-16 z-10"
+                className="object-contain h-full md:h-[110%] w-auto absolute bottom-0 md:left-16 z-10"
               />
           </div>
 
           {/* Right Side: Content */}
-          <div className="w-full md:w-1/2 flex flex-col justify-center px-6 md:pr-20 py-10 md:py-16 text-center md:text-right items-center md:items-end z-20">
+          <div className="w-full md:w-1/2 flex flex-col justify-center px-6 md:pr-20 pb-4 pt-4 md:py-16 text-center md:text-right items-center md:items-end z-20">
             <div className="flex flex-col items-center md:items-end w-full max-w-[550px]">
               <h2 className="text-tertiary text-3xl md:text-[3.25rem] font-bold mb-4 md:mb-4 leading-tight tracking-tight whitespace-pre-line">
                 {freedom.heading}
