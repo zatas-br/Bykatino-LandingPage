@@ -74,11 +74,11 @@ const Hero = () => {
         </div>
 
         {/* Right Image */}
-        <div className="relative md:absolute right-0 md:right-0 bottom-0 mt-8 md:mt-0 h-[350px] md:h-[125%] w-full md:w-[60%] flex items-end justify-center md:justify-end pointer-events-none z-20 overflow-visible md:overflow-visible">
+        <div className="relative md:absolute right-0 md:right-12 bottom-0 mt-8 md:mt-0 h-[350px] md:h-[125%] w-full md:w-[50%] flex items-end justify-center md:justify-end pointer-events-none z-20 overflow-visible md:overflow-visible">
           <img
             src={hero.imageSrc}
             alt={hero.imageAlt}
-            className="object-contain h-full md:h-full w-auto object-bottom md:object-right-bottom transform translate-y-0 md:translate-y-0 translate-x-0 md:translate-x-8"
+            className="object-contain h-full w-auto object-bottom md:absolute md:bottom-0 md:right-0"
           />
         </div>
       </div>

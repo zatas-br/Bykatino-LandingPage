@@ -108,7 +108,7 @@ const Contact = () => {
           <img
             src={contact.imageSrc}
             alt={contact.imageAlt}
-            className="object-contain object-right-bottom h-full absolute right-0 bottom-0 max-w-[60%] lg:max-w-none"
+            className="object-contain object-bottom h-full absolute right-0 bottom-0 max-w-[60%] lg:max-w-none"
           />
         </div>
 
