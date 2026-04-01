@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { content } from '../data.js';
 
 const Sets = () => {
   const { sets } = content;
+
+  const colorOptions = [
+    {
+      id: 'marrom',
+      alt: 'Conjunto Marrom',
+      smallSrc: '/roupa-maior.png',
+      largeSrc: '/roupa-marron.png'
+    },
+    {
+      id: 'verde',
+      alt: 'Conjunto Verde',
+      smallSrc: '/roupa-menor-verde.png',
+      largeSrc: '/roupa-verde.png'
+    },
+    {
+      id: 'azul',
+      alt: 'Conjunto Azul',
+      smallSrc: '/roupa-menor-azul.png',
+      largeSrc: '/roupa-azul.png'
+    }
+  ];
+
+  const [activeColor, setActiveColor] = useState(colorOptions[0]);
 
   return (
     <section className="w-full bg-primary pt-16 pb-16 md:pb-32">
@@ -28,32 +51,44 @@ const Sets = () => {
           </div>
 
           {/* Small Images Row */}
-          <div className="flex gap-4 md:gap-6 mt-12 md:mt-16 lg:mt-32 w-full max-w-lg mx-auto md:mx-0">
-            <div className="flex-1 rounded-[16px] md:rounded-[24px] overflow-hidden aspect-[4/3] bg-white">
-              <img
-                src={sets.imageSmall1Src}
-                alt={sets.imageSmall1Alt}
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-            <div className="flex-1 rounded-[16px] md:rounded-[24px] overflow-hidden aspect-[4/3] bg-[#0E3572]">
-              <img
-                src={sets.imageSmall2Src}
-                alt={sets.imageSmall2Alt}
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
+          <div className="flex gap-4 md:gap-6 mt-12 md:mt-16 lg:mt-32 w-full max-w-lg mx-auto md:mx-0 justify-center md:justify-start">
+            {colorOptions.map((color) => (
+              <div
+                key={color.id}
+                onClick={() => setActiveColor(color)}
+                onMouseEnter={() => setActiveColor(color)}
+                className={`flex-1 rounded-[16px] md:rounded-[24px] overflow-hidden aspect-[4/3] cursor-pointer transition-all duration-300 ${
+                  activeColor.id === color.id
+                    ? 'ring-4 ring-secondary scale-105 z-10'
+                    : 'opacity-70 hover:opacity-100 hover:scale-105'
+                }`}
+                style={{
+                  backgroundColor: color.id === 'marrom' ? '#f5e8d0' : color.id === 'verde' ? '#e8f0e6' : '#0E3572'
+                }}
+              >
+                <img
+                  src={color.smallSrc}
+                  alt={color.alt}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Right Column: Large Image */}
         <div className="w-full lg:w-[400px] xl:w-[420px] shrink-0 self-stretch flex items-stretch mt-8 md:mt-0">
-          <div className="w-full rounded-[24px] md:rounded-[32px] overflow-hidden bg-[#f5e8d0] aspect-[3/4] lg:aspect-auto h-full">
-            <img
-              src={sets.imageLargeSrc}
-              alt={sets.imageLargeAlt}
-              className="w-full h-full object-cover object-top"
-            />
+          <div className="w-full rounded-[24px] md:rounded-[32px] overflow-hidden bg-white/5 aspect-[3/4] lg:aspect-auto h-full flex items-center justify-center relative">
+            {colorOptions.map((color) => (
+              <img
+                key={color.id}
+                src={color.largeSrc}
+                alt={color.alt}
+                className={`w-full h-full object-cover object-top absolute inset-0 transition-opacity duration-500 ease-in-out ${
+                  activeColor.id === color.id ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            ))}
           </div>
         </div>
 

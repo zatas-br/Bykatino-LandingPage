@@ -104,11 +104,11 @@ const Contact = () => {
         </div>
 
         {/* Right Side: Image Desktop */}
-        <div className="flex-1 w-full md:w-auto h-full absolute right-0 bottom-0 pointer-events-none z-10 hidden md:flex items-end justify-end overflow-visible">
+        <div className="flex-1 w-full md:w-auto h-[120%] lg:h-[125%] absolute right-0 bottom-0 pointer-events-none z-10 hidden md:flex items-end justify-end overflow-visible">
           <img
             src={contact.imageSrc}
             alt={contact.imageAlt}
-            className="object-contain object-right-bottom h-[105%] lg:h-[115%] absolute right-0 bottom-0 max-w-[60%] lg:max-w-none"
+            className="object-contain object-right-bottom h-full absolute right-0 bottom-0 max-w-[60%] lg:max-w-none"
           />
         </div>
 

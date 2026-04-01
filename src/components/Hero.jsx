@@ -14,13 +14,13 @@ const Hero = () => {
         <img
           src={hero.backgroundImageSrc}
           alt={hero.backgroundImageAlt}
-          className="absolute top-1/2 left-[70%] md:left-[80%] w-[800px] md:w-[1000px] -translate-x-1/2 -translate-y-[45%] object-contain z-0 rotate-[15deg] opacity-60 mix-blend-multiply max-w-none"
+          className="hidden md:block absolute top-1/2 left-[70%] md:left-[80%] w-[800px] md:w-[1000px] -translate-x-1/2 -translate-y-[45%] object-contain z-0 rotate-[15deg] opacity-60 mix-blend-multiply max-w-none"
         />
       </div>
 
       <div className="relative z-10 flex flex-col md:flex-row w-full justify-between items-center h-full pt-8 md:pt-12">
         {/* Left Content */}
-        <div className="w-full md:max-w-[700px] flex flex-col justify-center space-y-4 md:space-y-6 z-30 pb-[300px] md:pb-0">
+        <div className="w-full md:max-w-[700px] flex flex-col justify-center space-y-4 md:space-y-6 z-30 pb-0 md:pb-0">
           <h1 className="text-primary text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.2] md:leading-[1.1] z-10 relative drop-shadow-sm whitespace-pre-line text-center md:text-left mt-4 md:mt-0">
             {hero.heading}
           </h1>
@@ -74,11 +74,11 @@ const Hero = () => {
         </div>
 
         {/* Right Image */}
-        <div className="absolute right-0 md:right-0 bottom-0 h-[350px] md:h-[115%] w-full md:w-[60%] flex items-end justify-center md:justify-end pointer-events-none z-20 overflow-visible md:overflow-visible">
+        <div className="relative md:absolute right-0 md:right-0 bottom-0 mt-8 md:mt-0 h-[350px] md:h-[125%] w-full md:w-[60%] flex items-end justify-center md:justify-end pointer-events-none z-20 overflow-visible md:overflow-visible">
           <img
             src={hero.imageSrc}
             alt={hero.imageAlt}
-            className="object-contain h-full md:h-full w-auto object-bottom md:object-right-bottom transform translate-y-[2%] md:translate-y-0 translate-x-0 md:translate-x-8"
+            className="object-contain h-full md:h-full w-auto object-bottom md:object-right-bottom transform translate-y-0 md:translate-y-0 translate-x-0 md:translate-x-8"
           />
         </div>
       </div>

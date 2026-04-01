@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <div className="px-4 w-full md:px-8 mt-4 md:mt-8 relative z-50">
-      <header className={`bg-secondary ${isMenuOpen ? 'rounded-[20px]' : 'rounded-full'} mx-auto max-w-7xl px-4 md:px-8 py-3 md:py-4 flex flex-col md:flex-row items-center justify-between shadow-sm transition-all duration-300`}>
+      <header className={`bg-secondary ${isMenuOpen ? 'rounded-b-[20px] rounded-t-[20px] md:rounded-full' : 'rounded-full'} mx-auto max-w-7xl px-4 md:px-8 py-3 md:py-4 flex flex-col md:flex-row items-center justify-between shadow-sm`}>
         <div className="flex items-center justify-between w-full md:w-auto">
           <img src={header.logoSrc} alt={header.logoAlt} className="h-8 md:h-10" />
           <button
