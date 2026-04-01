@@ -29,7 +29,7 @@ const Hero = () => {
             {hero.description}
           </p>
 
-          <div className="pt-8 md:pt-12 z-20 relative flex justify-center md:justify-start">
+          <div className="pt-4 md:pt-12 z-40 relative flex justify-center md:justify-start">
             <button
               className="group relative inline-flex items-center font-bold py-3 pl-4 pr-16 transition-all duration-300 overflow-hidden rounded-full"
               onMouseEnter={() => setIsHovered(true)}
@@ -60,7 +60,7 @@ const Hero = () => {
               >
                 {/* Initial outline circle that stays on left */}
                 <div
-                  className="absolute inset-0 rounded-full border border-primary/50 transition-opacity duration-300"
+                  className="absolute inset-0 rounded-full transition-opacity duration-300"
                   style={{ opacity: isHovered ? 0 : 1 }}
                 />
 
@@ -74,7 +74,7 @@ const Hero = () => {
         </div>
 
         {/* Right Image */}
-        <div className="absolute right-0 md:right-0 bottom-0 h-[400px] md:h-[115%] w-full md:w-[60%] flex items-end justify-center md:justify-end pointer-events-none z-20 overflow-visible md:overflow-visible">
+        <div className="absolute right-0 md:right-0 bottom-0 h-[350px] md:h-[115%] w-full md:w-[60%] flex items-end justify-center md:justify-end pointer-events-none z-20 overflow-visible md:overflow-visible">
           <img
             src={hero.imageSrc}
             alt={hero.imageAlt}
