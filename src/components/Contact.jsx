@@ -2,71 +2,33 @@ import React from 'react';
 import { Mail, ArrowRight } from 'lucide-react';
 import { content } from '../data.js';
 
-// Custom Instagram Icon since we need to make sure it's available or use our own
 const InstagramIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="text-[#7B1F34]"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#7B1F34]">
     <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
   </svg>
 );
 
-// Custom WhatsApp Icon since it's not standard in Lucide-react
-const WhatsAppIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="text-secondary"
-  >
-    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
-    <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
-    <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
-    <path d="M9.5 13.5c1.5 1 3.5 1 5 0" />
-  </svg>
-);
-
-
 const Contact = () => {
   const { contact } = content;
 
   return (
-    <section id="contato" className="w-full bg-primary pt-16 relative z-0 flex flex-col items-center">
+    <section id="contato" className="w-full bg-primary pt-32 relative z-0 flex flex-col items-center">
       <h2 className="text-white text-3xl md:text-4xl font-bold mb-8 px-4 text-center tracking-tight">
         {contact.heading}
       </h2>
 
-      <div className="w-full max-w-6xl bg-[#e6ce9e] rounded-t-[40px] md:rounded-t-[80px] flex flex-col md:flex-row items-start justify-between overflow-hidden relative min-h-[500px]">
+      <div className="w-full max-w-6xl bg-[#e6ce9e] rounded-t-[40px] md:rounded-t-[80px] flex flex-col md:flex-row items-start justify-between relative min-h-[500px] overflow-visible">
 
-        {/* Left Side: Links and Logo */}
         <div className="flex-1 flex flex-col w-full z-10 self-start px-6 md:pl-20 py-12 md:py-20">
-          {/* Decorative Logo / Brand Text */}
           <div className="mb-10 md:mb-16 -ml-2 md:-ml-4 text-center md:text-left">
             <h3 className="text-primary text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] font-bold tracking-[-0.08em] leading-none uppercase select-none" style={{ fontFamily: 'Georgia, serif' }}>
                {contact.logoText}
             </h3>
           </div>
 
-          {/* Social / Contact Links */}
           <div className="flex flex-col gap-5 max-w-[400px] w-full z-20">
-            {/* WhatsApp */}
             <a href="#" className="bg-[#7B1F34] hover:bg-[#5a1525] transition-colors rounded-3xl py-4 px-6 flex items-center justify-between group">
                <div className="flex items-center gap-4">
                  <div className="bg-[#e6ce9e] p-2 rounded-full">
@@ -79,7 +41,6 @@ const Contact = () => {
                <ArrowRight className="text-white group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* Email */}
             <a href="#" className="bg-[#7B1F34] hover:bg-[#5a1525] transition-colors rounded-3xl py-4 px-6 flex items-center justify-between group">
                <div className="flex items-center gap-4">
                  <div className="bg-[#e6ce9e] p-2 rounded-full">
@@ -90,7 +51,6 @@ const Contact = () => {
                <ArrowRight className="text-white group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* Instagram */}
             <a href="#" className="bg-[#7B1F34] hover:bg-[#5a1525] transition-colors rounded-3xl py-4 px-6 flex items-center justify-between group">
                <div className="flex items-center gap-4">
                  <div className="bg-[#e6ce9e] p-2 rounded-full">
@@ -103,8 +63,13 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right Side: Image Desktop */}
-        <div className="flex-1 w-full md:w-auto h-[120%] lg:h-[125%] absolute right-0 bottom-0 pointer-events-none z-10 hidden md:flex items-end justify-end overflow-visible">
+        {/* Imagem Desktop com comentários de ajuste */}
+        <div className="hidden md:flex flex-1 absolute right-0 bottom-0 pointer-events-none z-10 items-end justify-end overflow-visible h-[120%] lg:h-[111%]">
+          {/* COMO AJUSTAR A IMAGEM ABAIXO:
+              1. AUMENTAR/DIMINUIR: Altere o 'h-[120%]' no div acima ou o 'max-w-[60%]' na img abaixo.
+              2. MOVER PARA CIMA: Adicione uma margem negativa (ex: -translate-y-10) ou altere 'bottom-0' para algo como 'bottom-10'.
+              3. MOVER PARA OS LADOS: Altere o 'right-0' no div acima (ex: 'right-10' move para a esquerda).
+          */}
           <img
             src={contact.imageSrc}
             alt={contact.imageAlt}
@@ -112,12 +77,11 @@ const Contact = () => {
           />
         </div>
 
-        {/* Mobile Image */}
-        <div className="w-full flex justify-center mt-8 md:hidden z-10 relative">
+        <div className="w-full flex justify-center mt-8 md:hidden z-10 relative overflow-visible pb-0">
            <img
             src={contact.imageSrc}
             alt={contact.imageAlt}
-            className="object-contain h-[350px] w-auto bottom-0"
+            className="object-contain h-[350px] w-auto"
           />
         </div>
 
