@@ -55,13 +55,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Contêiner da Imagem Direita com Comentários de Ajuste */}
-          {/* COMO AJUSTAR A IMAGEM NO DESKTOP (md:):
-              1. TAMANHO: Altere 'md:h-[165%]'. Aumente para maior, diminua para menor.
-              2. SUBIR/DESCER: Altere 'md:-bottom-5'. Use valores negativos maiores (ex: -bottom-20) para descer mais, ou zero/positivos para subir.
-              3. ESQUERDA/DIREITA: Altere 'md:right-4'. Diminua para mover para a direita (pode usar negativo ex: -right-10), aumente para mover para a esquerda.
-          */}
-          <div className="relative md:absolute right-0 md:right-0 -bottom-30.5 mt-8 md:mt-0 h-[350px] md:h-[175%] w-full md:w-[50%] flex items-end justify-center md:justify-end pointer-events-none z-20 overflow-visible">
+          {/* Contêiner da Imagem Direita com Ajustes Mobile e Desktop */}
+          <div className="relative md:absolute right-0 md:right-0 bottom-0 md:-bottom-30.5 mt-8 md:mt-0 h-[350px] md:h-[175%] w-full md:w-[50%] flex items-end justify-center md:justify-end pointer-events-none z-20 overflow-visible">
             <img
               src={hero.imageSrc}
               alt={hero.imageAlt}
